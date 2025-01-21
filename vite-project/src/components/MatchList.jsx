@@ -24,10 +24,6 @@ export default function MatchList() {
     fetchDate();
   }, []);
 
-  function goCreateMatch(e) {
-    e.preventDefault;
-    return <Link to="/matches/create_match"></Link>;
-  }
   if (!matches) return <p>No matches here</p>;
 
   return isLoading ? (
