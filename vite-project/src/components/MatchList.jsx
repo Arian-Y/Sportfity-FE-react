@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getMatches, getMatchTeamsByMatchId } from "../../api";
 import { Link } from "react-router";
 import MatchCard from "./MatchCard";
+import "../App.css";
 export default function MatchList() {
   const [matches, setMatches] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +24,10 @@ export default function MatchList() {
     fetchDate();
   }, []);
 
+  function goCreateMatch(e) {
+    e.preventDefault;
+    return <Link to="/matches/create_match"></Link>;
+  }
   if (!matches) return <p>No matches here</p>;
 
   return isLoading ? (
@@ -46,7 +51,9 @@ export default function MatchList() {
             );
           })}
         </div>
-        <button>Create Match</button>
+        <Link to="/matches/create_match">
+          <button>Create Match</button>
+        </Link>
       </section>
     </>
   );
