@@ -78,10 +78,10 @@ export function postMatchPlayer(match_id, player_id, goals, assists) {
 
 export function deleteMatch(match_id) {
   return sportifyApi.delete(`/matches/${match_id}`).then(({ data: match }) => {
-    console.log(match);
     return match;
   });
 }
+
 
 export const getLeagues = () => {
   return sportifyApi.get(`/leagues`).then(({ data: leagues }) => {
@@ -100,3 +100,12 @@ export const getOrganisers = () => {
     return organisers;
   });
 };
+
+export function getMatchTeamsByMatchId(match_id) {
+  return sportifyApi
+    .get(`/matches/${match_id}/match_teams`)
+    .then(({ data: matchTeams }) => {
+      return matchTeams;
+    });
+}
+
