@@ -6,7 +6,6 @@ const sportifyApi = axios.create({
 
 export function getMatches() {
   return sportifyApi.get("/matches").then(({ data: matches }) => {
-    console.log(matches);
     return matches;
   });
 }
@@ -79,7 +78,14 @@ export function postMatchPlayer(match_id, player_id, goals, assists) {
 
 export function deleteMatch(match_id) {
   return sportifyApi.delete(`/matches/${match_id}`).then(({ data: match }) => {
-    console.log(match);
     return match;
   });
+}
+
+export function getMatchTeamsByMatchId(match_id) {
+  return sportifyApi
+    .get(`/matches/${match_id}/match_teams`)
+    .then(({ data: matchTeams }) => {
+      return matchTeams;
+    });
 }
