@@ -6,6 +6,7 @@ const sportifyApi = axios.create({
 
 export function getMatches() {
   return sportifyApi.get("/matches").then(({ data: matches }) => {
+    console.log(matches);
     return matches;
   });
 }
