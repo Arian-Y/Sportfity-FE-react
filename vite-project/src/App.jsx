@@ -10,15 +10,13 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-    <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/matches" element={<MatchList />}></Route>
       </Routes>
-  //  <League/>
+      <League />
       <Footer />
-    </BrowserRouter>
-  </>
+    </>
   );
 }
 
