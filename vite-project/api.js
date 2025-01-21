@@ -82,6 +82,25 @@ export function deleteMatch(match_id) {
   });
 }
 
+
+export const getLeagues = () => {
+  return sportifyApi.get(`/leagues`).then(({ data: leagues }) => {
+    return leagues;
+  });
+};
+
+export const getLeagueById = (leagueId) => {
+  return sportifyApi.get(`/leagues/${leagueId}`).then(({ data: leagues }) => {
+    return leagues;
+  });
+};
+
+export const getOrganisers = () => {
+  return sportifyApi.get(`/organisers`).then(({ data: organisers }) => {
+    return organisers;
+  });
+};
+
 export function getMatchTeamsByMatchId(match_id) {
   return sportifyApi
     .get(`/matches/${match_id}/match_teams`)
@@ -89,3 +108,4 @@ export function getMatchTeamsByMatchId(match_id) {
       return matchTeams;
     });
 }
+
