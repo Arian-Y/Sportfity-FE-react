@@ -5,13 +5,17 @@ import "./App.css";
 import MatchList from "./components/MatchList";
 import Header from "./components/Header";
 
+import { BrowserRouter } from "react-router";
+
+
+
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <MatchList />
-    </>
+    </BrowserRouter>
   );
 }
 
