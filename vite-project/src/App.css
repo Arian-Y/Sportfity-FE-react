@@ -34,3 +34,9 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+form {
+  border: solid black 2px;
+}
+form input {
+  border: solid black 2px;
+}

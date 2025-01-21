@@ -6,18 +6,19 @@ import Header from "./components/Header";
 import League from "./components/League";
 import { BrowserRouter } from "react-router";
 import Footer from "./components/Footer";
+import CreateMatch from "./components/CreateMatch";
 
 function App() {
   return (
     <>
       <Header />
 
-      <Routes>
+      {/* <Routes>
         <Route path="/matches" element={<MatchList />}></Route>
         <Route path="/leagues" element={<League />}></Route>
         <Route path="/matches/create_match"></Route>
-      </Routes>
-
+      </Routes> */}
+      <CreateMatch />
       <Footer />
     </>
   );
