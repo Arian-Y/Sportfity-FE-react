@@ -7,7 +7,7 @@ export default function MatchStats({ match_id }) {
   useEffect(() => {
     setIsLoading(true);
 
-    getMatchStatsById(match_id).then((matchStats) => {
+    getMatchStatsById(match_id).then(({ matchStats }) => {
       setMatchStats(matchStats);
       console.log(matchStats);
       setIsLoading(false);
@@ -20,6 +20,23 @@ export default function MatchStats({ match_id }) {
     </section>
   ) : (
     <>
+      <section>
+        {matchStats.map((team) => {
+          return (
+            <ul>
+              <p>{team.score}</p>
+              <p>{team.team_name}</p>
+            </ul>
+          );
+        })}
+      </section>
+      <section>
+        <ul>
+          <p>{matchStats[0].match_date}</p>
+          <p>{matchStats[0].start_time}</p>
+          <p>{matchStats[0].league_name}</p>
+        </ul>
+      </section>
       <section></section>
     </>
   );
