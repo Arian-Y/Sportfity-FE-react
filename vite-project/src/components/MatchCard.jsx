@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { getMatchTeamsByMatchId, getTeamsById } from "../../api";
+import "../App.css";
 
 export default function MatchCard({ match }) {
   const [teams, setTeams] = useState([]);

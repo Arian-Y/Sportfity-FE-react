@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/matches" element={<MatchList />}></Route>
         <Route path="/leagues" element={<League />}></Route>
+        <Route path="/matches/create_match"></Route>
       </Routes>
 
       <Footer />
