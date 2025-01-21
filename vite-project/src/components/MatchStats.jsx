@@ -14,6 +14,8 @@ export default function MatchStats({ match_id }) {
     });
   }, []);
 
+  if (matchStats.length === 0) return <p>No match stats available...</p>;
+
   return isLoading ? (
     <section>
       <p>Loading...</p>
@@ -32,9 +34,9 @@ export default function MatchStats({ match_id }) {
       </section>
       <section>
         <ul>
-          <p>{matchStats[0].match_date}</p>
-          <p>{matchStats[0].start_time}</p>
-          <p>{matchStats[0].league_name}</p>
+          <p>{new Date(matchStats[0].match_date).toLocaleDateString()}</p>
+          <p>Start time: {matchStats[0].start_time}</p>
+          <p>League: {matchStats[0].league_name}</p>
         </ul>
       </section>
       <section></section>

@@ -44,7 +44,7 @@ export default function MatchList() {
                 <section>
                   <ul key={match.match_id}>
                     <MatchCard match={match} />
-                    <Link to={"/matches/" + match.match_id + "/stats"}>
+                    <Link to={"/matches/" + match.match_id}>
                       Click here to find out more..
                     </Link>
                   </ul>

@@ -20,6 +20,9 @@ export default function MatchLineUp({ match_id }) {
   return (
     <>
       <section>
+        <p>Line up</p>
+      </section>
+      <section>
         <p>{lineUp[0].team_name}</p>
         {lineUp.map((player) => {
           if (player.team_name === lineUp[0].team_name)
