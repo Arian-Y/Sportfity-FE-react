@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMatches, getMatchTeamsByMatchId } from "../../api";
+import { getMatches } from "../../api";
 import { Link } from "react-router";
 import MatchCard from "./MatchCard";
 import "../App.css";
@@ -37,7 +37,6 @@ export default function MatchList() {
   ) : (
     <>
       <section>
-        <p>Here is a list of matches you can join:</p>
         <div>
           {matches.map((match) => {
             return (
@@ -45,6 +44,9 @@ export default function MatchList() {
                 <section>
                   <ul key={match.match_id}>
                     <MatchCard match={match} />
+                    <Link to={"/matches/" + match.match_id + "/stats"}>
+                      Click here to find out more..
+                    </Link>
                   </ul>
                 </section>
               </>

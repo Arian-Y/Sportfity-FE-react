@@ -5,8 +5,10 @@ import "../App.css";
 
 export default function MatchCard({ match }) {
   const [teams, setTeams] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getMatchTeamsByMatchId(match.match_id)
       .then(({ teams }) => {
         return Promise.all([
@@ -16,9 +18,15 @@ export default function MatchCard({ match }) {
       })
       .then((teams) => {
         setTeams(teams);
+        setIsLoading(false);
       });
   }, []);
-  return (
+
+  return isLoading ? (
+    <section>
+      <p>Loading...</p>
+    </section>
+  ) : (
     <>
       <section>
         {teams.map(([team], index) => {
