@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMatches } from "../../api";
+import { getMatches, getMatchTeamsByMatchId } from "../../api";
 import { Link } from "react-router";
 import MatchCard from "./MatchCard";
 export default function MatchList() {
@@ -7,15 +7,20 @@ export default function MatchList() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getMatches()
-      .then((matches) => {
-        setMatches(matches);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching articles:", err);
-        setIsLoading(false);
-      });
+    const fetchDate = () => {
+      setIsLoading(true);
+      Promise.all([getMatches()])
+        .then(([matches, matchTeams]) => {
+          setMatches(matches);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.error("Error fetching matches & teams:", err);
+          setIsLoading(false);
+        });
+    };
+
+    fetchDate();
   }, []);
 
   if (!matches) return <p>No matches here</p>;
@@ -28,17 +33,19 @@ export default function MatchList() {
     <>
       <section>
         <p>Here is a list of matches you can join:</p>
-        <ul>
-          {matches.map((match, index) => {
+        <div>
+          {matches.map((match) => {
             return (
-              <section>
-                <ul key={index}>
-                  <MatchCard match={match} />
-                </ul>
-              </section>
+              <>
+                <section>
+                  <ul key={match.match_id}>
+                    <MatchCard match={match} />
+                  </ul>
+                </section>
+              </>
             );
           })}
-        </ul>
+        </div>
         <button>Create Match</button>
       </section>
     </>
