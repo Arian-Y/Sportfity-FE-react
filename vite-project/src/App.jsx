@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./App.css";
 
@@ -15,22 +14,13 @@ import Match from "./components/Match";
 import "./App.css";
 import CreateMatch from "./components/CreateMatch";
 
-
 function App() {
   return (
     <>
       <Header />
 
-      {/* <MatchList />
-      <League />
-      <Footer /> */}
-
-      <MainPage />
-      <Footer />
-    </BrowserRouter>
-
-
       <Routes>
+        <Route path="/" element={<MainPage />}></Route>
         <Route path="/matches" element={<MatchList />}></Route>
         <Route path="/leagues" element={<League />}></Route>
         <Route path="/matches/create_match" element={<CreateMatch />}></Route>
@@ -39,7 +29,6 @@ function App() {
 
       <Footer />
     </>
-
   );
 }
 
