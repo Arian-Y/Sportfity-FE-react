@@ -11,10 +11,12 @@ function App() {
   return (
     <>
       <Header />
+
       <Routes>
         <Route path="/matches" element={<MatchList />}></Route>
+        <Route path="/leagues" element={<League />}></Route>
       </Routes>
-      <League />
+
       <Footer />
     </>
   );
