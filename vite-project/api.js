@@ -85,7 +85,13 @@ export function deleteMatch(match_id) {
 export function getMatchTeamsByMatchId(match_id) {
   return sportifyApi
     .get(`/matches/${match_id}/match_teams`)
-    .then(({ data: matchTeams }) => {
-      return matchTeams;
+    .then(({ data: teams }) => {
+      return teams;
     });
+}
+
+export function getTeamsById(team_id) {
+  return sportifyApi.get(`/teams/${team_id}`).then(({ data: team }) => {
+    return team;
+  });
 }

@@ -1,16 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Routes, Route } from "react-router";
 import "./App.css";
 import MatchList from "./components/MatchList";
 import Header from "./components/Header";
-
 
 function App() {
   return (
     <>
       <Header />
-      <MatchList />
+      <Routes>
+        <Route path="/matches" element={<MatchList />}></Route>
+      </Routes>
     </>
   );
 }
