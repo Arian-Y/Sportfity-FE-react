@@ -14,12 +14,6 @@ function SideNav({ setShow }) {
       tabIndex="-1"
       aria-labelledby="drawer-navigation-label"
     >
-      <h5
-        id="drawer-navigation-label"
-        className="text-base font-semibold text-[#0891b2] uppercase dark:text-gray-400 md:text-2xl md:font-bold"
-      >
-        Topics
-      </h5>
       {/* Close Button */}
       <button
         type="button"
