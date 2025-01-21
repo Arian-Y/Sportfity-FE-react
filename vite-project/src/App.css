@@ -1,0 +1,16 @@
+.league-list {
+  border: solid black 2px;
+}
+.league-container {
+  border: solid black 2px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: auto auto auto auto;
+}
+li {
+  list-style: none;
+}
+#league-container-div {
+  text-align: center;
+}

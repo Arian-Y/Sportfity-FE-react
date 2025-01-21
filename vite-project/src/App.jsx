@@ -1,5 +1,11 @@
+import League from "./components/League";
+import "./App.css";
 function App() {
-  return <></>;
+  return (
+    <>
+      <League />
+    </>
+  );
 }
 
 export default App;
