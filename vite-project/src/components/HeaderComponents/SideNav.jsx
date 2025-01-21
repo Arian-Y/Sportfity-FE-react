@@ -56,7 +56,7 @@ function SideNav({ setShow }) {
           <li>
             <Link
               onClick={() => setShow(false)}
-              to="/articles/topics/coding"
+              to="/leagues"
               className="flex items-center p-2 text-[#0891b2] rounded-lg hover:bg-[#0891b2] hover:text-white dark:text-white dark:hover:bg-gray-700 md:text-xl"
             >
               <span className="flex items-center gap-2">
@@ -68,7 +68,7 @@ function SideNav({ setShow }) {
           <li>
             <Link
               onClick={() => setShow(false)}
-              to="/articles/topics/cooking"
+              to="/matches"
               className="flex items-center p-2 text-[#0891b2] rounded-lg hover:bg-[#0891b2] hover:text-white dark:text-white dark:hover:bg-gray-700 md:text-xl"
             >
               <span className="flex items-center gap-2">
@@ -80,7 +80,7 @@ function SideNav({ setShow }) {
           <li>
             <Link
               onClick={() => setShow(false)}
-              to="/articles/topics/football"
+              to="/signup"
               className="flex items-center p-2 text-[#0891b2] rounded-lg hover:bg-[#0891b2] hover:text-white dark:text-white dark:hover:bg-gray-700 md:text-xl"
             >
               <span className="flex items-center gap-2">
@@ -92,7 +92,7 @@ function SideNav({ setShow }) {
           <li>
             <Link
               onClick={() => setShow(false)}
-              to="/users"
+              to="/login"
               className="flex items-center p-2 text-[#0891b2] rounded-lg hover:bg-[#0891b2] hover:text-white dark:text-white dark:hover:bg-gray-700 md:text-xl"
             >
               <span className="flex items-center gap-2">
