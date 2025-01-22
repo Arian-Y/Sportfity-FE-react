@@ -1,6 +1,6 @@
 import "../assets/SignIn.css";
 import { useState } from "react";
-export default function SignIn() {
+export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const correctEmail = "admin@techSphere.com";
@@ -8,8 +8,7 @@ export default function SignIn() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // handleEmail();
-    // handlePassword();
+
     if (email !== correctEmail) {
       console.log("wrong email!!");
       return;
@@ -34,7 +33,7 @@ export default function SignIn() {
     <>
       <section className="contain">
         <section className="container">
-          <div className="heading">Sign In</div>
+          <div className="heading">Log In</div>
           <form onSubmit={handleSubmit} className="form">
             <input
               onChange={handleEmail}
@@ -59,7 +58,7 @@ export default function SignIn() {
             <span className="forgot-password">
               <a href="#">Forgot Password ?</a>
             </span>
-            <button className="login-button">Sign In</button>
+            <button className="login-button">Submit</button>
           </form>
 
           <div className="social-account-container">

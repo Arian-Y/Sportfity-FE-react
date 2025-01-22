@@ -8,7 +8,7 @@ import MainPage from "./Pages/MainPage";
 import Match from "./components/Match";
 import "./App.css";
 import CreateMatch from "./components/CreateMatch";
-import SignIn from "./components/SignIn";
+import LogIn from "./components/LogIn";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
 
       <main className="flex-grow">
         <Routes>
-          <Route path="/signup" element={<SignIn />}></Route>
+          <Route path="/login" element={<LogIn />}></Route>
           <Route path="/" element={<MainPage />} />
           <Route path="/matches" element={<MatchList />} />
           <Route path="/leagues" element={<League />} />
