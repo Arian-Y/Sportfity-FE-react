@@ -67,6 +67,7 @@ export default function CreateMatch() {
           value={leagueId}
           placeholder="enter your league id"
         ></input>
+        <button>Submit</button>
       </form>
     </>
   );
