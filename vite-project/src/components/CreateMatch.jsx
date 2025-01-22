@@ -11,16 +11,16 @@ export default function CreateMatch() {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    postMatch(matchDate, startTime, matchDuration, leagueId).then(
-      ({ match }) => {
+    postMatch(matchDate, startTime, matchDuration, leagueId)
+      .then(({ match }) => {
         console.log(match);
         setMatchDate(match.match_date);
         setStartTime(match.start_time);
         setMatchDuration(match.duration);
         setLeagueId(match.league_id);
         setIsLoading(false);
-      }
-    );
+      })
+      .then(() => {});
     setMatchDate(null);
     setStartTime(null);
     setMatchDuration(null);
