@@ -8,6 +8,7 @@ function VideoCard() {
         autoPlay
         muted
         controls
+        loop
       >
         <source
           src="../../../public/videos/project_video.mp4"
