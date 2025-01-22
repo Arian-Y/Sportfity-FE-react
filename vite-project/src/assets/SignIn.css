@@ -26,7 +26,7 @@
   text-align: center;
   font-weight: 900;
   font-size: 30px;
-  color: rgb(16, 137, 211);
+  color: #0891b2;
 }
 
 .form {
@@ -117,7 +117,7 @@
 }
 
 .social-account-container .social-accounts .social-button {
-  background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+  background: #0891b2;
   border: 5px solid white;
   padding: 5px;
   border-radius: 50%;
@@ -150,6 +150,6 @@
 
 .agreement a {
   text-decoration: none;
-  color: #0099ff;
+  color: #0891b2;
   font-size: 9px;
 }
