@@ -11,10 +11,12 @@ export const League = () => {
   }, [leagues]);
 
   return (
-    <div id="league-container-div">
+    <div className="text-center">
       <div>
-        <h2>Leagues</h2>
-        <ul className="league-container">
+        <h2 className="text-left m-4 text-2xl font-bold text-[#0891b2]">
+          Leagues that are coming soon...
+        </h2>
+        <ul className=" p-4 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
           {leagues.map((league) => {
             return <LeagueCard key={league.league_id} league={league} />;
           })}

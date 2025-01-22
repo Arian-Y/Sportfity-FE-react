@@ -16,19 +16,21 @@ import CreateMatch from "./components/CreateMatch";
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
 
-      <Routes>
-        <Route path="/" element={<MainPage />}></Route>
-        <Route path="/matches" element={<MatchList />}></Route>
-        <Route path="/leagues" element={<League />}></Route>
-        <Route path="/matches/create_match" element={<CreateMatch />}></Route>
-        <Route path="/matches/:match_id/" element={<Match />}></Route>
-      </Routes>
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/matches" element={<MatchList />} />
+          <Route path="/leagues" element={<League />} />
+          <Route path="/matches/create_match" element={<CreateMatch />} />
+          <Route path="/matches/:match_id/" element={<Match />} />
+        </Routes>
+      </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
 
