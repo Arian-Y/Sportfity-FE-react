@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import VideoCard from "../components/MainPageComponents/VideoCard";
 import { getLeagues } from "../../api";
 import Card from "../components/MainPageComponents/Card";
+import { Link } from "react-router";
 
 function MainPage() {
   const [leagues, setLeagues] = useState([]);
@@ -45,17 +46,21 @@ function MainPage() {
         <div className=" p-2 w-96">
           <div className=" p-8 flex flex-col gap-4 items-center justify-center">
             <p className="text-[#77d7ef] text-xl font-bold">Wanna Join ?</p>
-            <a className="border-2 solid bg-[#0891b2] text-white font-bold px-4 py-2 rounded cursor-pointer hover:bg-white hover:text-[#0891b2] ">
-              Join the Game
-            </a>
+            <Link to="/matches">
+              <a className="border-2 solid bg-[#0891b2] text-white font-bold px-4 py-2 rounded cursor-pointer hover:bg-white hover:text-[#0891b2] ">
+                Join the Game
+              </a>
+            </Link>
           </div>
           <div className=" p-8 flex flex-col gap-4 items-center justify-center">
             <p className="text-[#77d7ef] text-xl font-bold">
               Play with friends ?
             </p>
-            <a className="border-2 solid bg-[#0891b2] text-white font-bold px-4 py-2 rounded cursor-pointer hover:bg-white hover:text-[#0891b2]">
-              Create you own
-            </a>
+            <Link to="/matches/create_match">
+              <a className="border-2 solid bg-[#0891b2] text-white font-bold px-4 py-2 rounded cursor-pointer hover:bg-white hover:text-[#0891b2]">
+                Create you own
+              </a>
+            </Link>
           </div>
         </div>
       </div>
