@@ -21,7 +21,7 @@ export default function MatchLineUp({ match_id }) {
     <section>
       <section className="text-center p-4">
         <h3 className="text-center my-4 text-2xl text-[#0891b2] underline">
-          Line up
+          Team Line-Ups
         </h3>
       </section>
       {/*  */}
