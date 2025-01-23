@@ -27,17 +27,15 @@ export default function MatchCard({ match }) {
       <p>Loading...</p>
     </section>
   ) : (
-    <>
-      <section>
-        {teams.map(([team], index) => {
-          return index === 0 ? (
-            <p>{team.team_name} vs. </p>
-          ) : (
-            <p>{team.team_name}</p>
-          );
-        })}
-        <p>{new Date(match.match_date).toLocaleDateString()}</p>
-      </section>
-    </>
+    <section className="border-4 border-solid border-red-500">
+      {teams.map(([team], index) => {
+        return index === 0 ? (
+          <p>{team.team_name} vs. </p>
+        ) : (
+          <p>{team.team_name}</p>
+        );
+      })}
+      <p>{new Date(match.match_date).toLocaleDateString()}</p>
+    </section>
   );
 }

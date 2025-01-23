@@ -3,6 +3,7 @@ import { getMatches } from "../../api";
 import { Link } from "react-router";
 import MatchCard from "./MatchCard";
 import "../App.css";
+import MatchListCard from "./MatchesComponents/MatchListCard";
 export default function MatchList() {
   const [matches, setMatches] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,27 +33,19 @@ export default function MatchList() {
     </section>
   ) : (
     <>
-      <section>
-        <div>
-          {matches.map((match) => {
-            return (
-              <>
-                <section>
-                  <ul key={match.match_id}>
-                    <MatchCard match={match} />
-                    <Link to={"/matches/" + match.match_id}>
-                      Click here to find out more..
-                    </Link>
-                  </ul>
-                </section>
-              </>
-            );
-          })}
-        </div>
-        <Link to="/matches/create_match">
-          <button>Create Match</button>
+      <div className="m-4 p-4 flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:justify-center ">
+        {matches.map((obj) => {
+          return <MatchListCard obj={obj} />;
+        })}
+      </div>
+      <div className="text-center my-4">
+        <Link
+          to="/matches/create_match"
+          className="inline-flex items-center px-3 py-2 text-2xl font-medium text-center text-white bg-[#0891b2] rounded-lg hover:bg-[#45b1cc] focus:ring-4 focus:outline-none focus:ring-[#45b1cc] dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-blue-800"
+        >
+          Create New Match
         </Link>
-      </section>
+      </div>
     </>
   );
 }
